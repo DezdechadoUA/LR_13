@@ -1,0 +1,179 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    background: #0078d7;
+    padding: 20px;
+    color: white;
+}
+
+.title {
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px #000, 4px 4px 8px #555;
+    position: relative;
+}
+
+
+
+/* Main block */
+.main {
+    display: grid;
+    grid-template-columns: 3fr 1fr; 
+    gap: 10px;
+    padding: 20px;
+}
+
+.central-block {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    position: relative;
+}
+
+.image-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    padding: 10px;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.image-block img {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    margin-bottom: 10px;
+}
+
+.image-block:hover {
+    transform: scale(1.5); 
+    z-index: 2; 
+    transition: transform 0.3s ease;
+}
+
+/* Sidebar */
+.sidebar {
+    background: #f4f4f4;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: 100%;
+}
+
+.vertical-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-align: center;
+    font-size: 1.2em;
+    color: #555;
+}
+
+/* Scrollable Text Sections */
+.scrollable-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.scrollable-text {
+    height: 80px;
+    overflow-y: auto;
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 0.9em;
+}
+
+/* Footer */
+.footer {
+    background: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.navigation .nav-link {
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.navigation .nav-link:hover {
+    color: yellow;
+}
+
+.form {
+    margin-top: 10px;
+}
+
+input, button {
+    padding: 5px 10px;
+    margin: 5px;
+}
+
+/* Fixed Button */
+
+.fixed-button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: #0078d7; /* Початковий фон */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    font-size: 1em;
+}
+
+/* Зміна фону, збільшення розміру та тексту при наведенні */
+.fixed-button:hover {
+    transform: scale(1.2) rotate(10deg); /* Збільшення кнопки */
+    background-color: black; /* Чорний фон */
+    color: white; /* Колір тексту залишається білим */
+}
+
+/* Заміна тексту при наведенні */
+.fixed-button:hover::after {
+    content: "Join us on Telegram"; /* Заміна тексту */
+    font-size: 1.2em; /* Збільшення шрифту */
+}
+
+/* Початковий стан кнопки: текст "Join" */
+.fixed-button::after {
+    content: "Join"; /* Початковий текст */
+    font-size: 1em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main {
+        grid-template-columns: 1fr;
+    }
+
+    .central-block {
+        grid-template-columns: 1fr;
+    }
+
+    .scrollable-container {
+        grid-template-columns: 1fr;
+    }
+}
